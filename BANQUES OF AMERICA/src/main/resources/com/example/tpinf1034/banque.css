@@ -1,0 +1,70 @@
+#en_tete, #menu {
+    -fx-background-color: lightgray;
+}
+#en_tete {
+    -fx-border-width: 0 0 2 0;
+    -fx-border-style: solid;
+}
+#titre_fenetre {
+    -fx-font-size: 32pt;
+    -fx-font-weight: bold;
+}
+.en_tete_action {
+    -fx-min-width: 150px;
+    -fx-font-size: 10pt;
+}
+.titre_secondaire {
+    -fx-font-size: 16pt;
+    -fx-font-weight: bold;
+}
+.categorie_menu {
+    -fx-font-size: 12pt;
+    -fx-underline: true;
+}
+.menu_action {
+    -fx-min-width: 225px;
+    -fx-font-size: 10pt;
+}
+.outil_action {
+    -fx-font-size: 10pt;
+    -fx-min-width: 100px;
+}
+#main{
+    -fx-background-color:white;
+}
+#titre{
+    -fx-font-size: 18pt;
+    -fx-padding: 10px;
+}
+
+Button {
+    -fx-background-color: rgba(38, 38, 182, 0.8);
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+}
+.textField{
+    -fx-max-height: 140px;
+    -fx-max-width: 200px;
+}
+
+#convert_pane{
+    -fx-background-color: white;
+    -fx-max-width: 500px;
+    -fx-padding: 20px;
+}
+.enEvidence {
+    -fx-background-color: white;
+}
+
+.titre_exemple {
+    -fx-font-weight: bold;
+}
+
+.bordure {
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-border-style: solid;
+}

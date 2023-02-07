@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<!--
+        * KWEPET PANY MATHIEU FLORENT
+        * MARIAMA DIALLO
+        * FATIMATA DIALLO
+        * NONONSI CHARLES
+
+        */
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tpinf1034.FormulaireController"
+            stylesheets="@banque.css">
+
+    <fx:define>
+        <ToggleGroup fx:id="theme"/>
+    </fx:define>
+
+
+    <top>
+
+
+
+
+        <!-- Menu du système -->
+        <MenuBar styleClass="barre-menu-clair">
+            <Menu text="_Fichier" styleClass="menu-clair">
+
+                <MenuItem text="_Options"/>
+                <MenuItem text="_Quitter"/>
+            </Menu>
+            <Menu text="_Affichage" styleClass="menu-clair">
+                <RadioMenuItem text="Thème _clair" toggleGroup="$theme" selected="true" userData="CLAIR"/>
+                <RadioMenuItem text="Thème _sombre" toggleGroup="$theme" userData="SOMBRE"/>
+            </Menu>
+            <Menu text="A_ide">
+                <MenuItem text="À _propos"/>
+            </Menu>
+        </MenuBar>
+        <AnchorPane fx:id="en_tete">
+            <StackPane AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10">  <!-- Empilement image et texte -->
+                <AnchorPane>
+                    <ImageView AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" fitWidth="100" fitHeight="100">
+                        <image>
+                            <Image url="@images/t‚l‚chargement.png"/>
+                        </image>
+                    </ImageView>
+                </AnchorPane>
+            </StackPane>
+            <Text fx:id="titre_fenetre" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="350">FORMULAIRE
+            </Text>
+        </AnchorPane>
+    </top>
+
+
+
+
+    <center>
+    <!-- Globalement la zone de travail est verticale -->
+    <VBox fx:id="zone_travail" alignment="TOP_CENTER" spacing="10">
+    <padding>
+        <Insets top="10" bottom="10" left="10" right="10"/>
+    </padding>
+
+
+        <GridPane vgap="5" hgap="10">
+        <Label
+                GridPane.rowIndex="0" GridPane.columnIndex="0">Nom :
+        </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="champ_nom"/>
+
+        <Label textAlignment="RIGHT"
+               GridPane.rowIndex="1" GridPane.columnIndex="0">Prenom :
+        </Label>
+        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="champ_prenom"/>
+
+
+            <Label
+                    GridPane.rowIndex="2" GridPane.columnIndex="0">Lieu de naissance :
+            </Label>
+            <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="lieu_naissance"/>
+
+
+            <Label
+                    GridPane.rowIndex="3" GridPane.columnIndex="0">Numero de telephone :
+            </Label>
+            <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="numero_telephone"/>
+
+            <Label
+                    GridPane.rowIndex="4" GridPane.columnIndex="0">Mail :
+            </Label>
+            <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="champ_mail"/>
+
+            <Label
+                    GridPane.rowIndex="5" GridPane.columnIndex="0">Adresse  :
+            </Label>
+            <TextField GridPane.rowIndex="5" GridPane.columnIndex="1" fx:id="zone_adresse"/>
+
+            <Label
+                    GridPane.rowIndex="6" GridPane.columnIndex="0">Code Postal :
+            </Label>
+            <TextField GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="code_postal"/>
+
+            <Label
+                    GridPane.rowIndex="7" GridPane.columnIndex="0">Ville :
+            </Label>
+            <TextField GridPane.rowIndex="7" GridPane.columnIndex="1" fx:id="champ_ville"/>
+
+            <Label  GridPane.rowIndex="8" GridPane.columnIndex="0"> Statut</Label>
+            <fx:define>
+                <ToggleGroup fx:id="Statut" /> </fx:define>
+            <RadioButton toggleGroup="$Statut" GridPane.rowIndex="8" GridPane.columnIndex="1" fx:id = "statutcelibataire" >Celibataire</RadioButton>
+            <RadioButton toggleGroup="$Statut" GridPane.rowIndex="9" GridPane.columnIndex="1" fx:id = "statutmariee">Mariee</RadioButton>
+            <RadioButton toggleGroup="$Statut"  GridPane.rowIndex="10" GridPane.columnIndex="1" fx:id = "statutconcubinage">Conjoint de fait</RadioButton>
+            <RadioButton toggleGroup="$Statut"  GridPane.rowIndex="11" GridPane.columnIndex="1" fx:id = "statutveuf">Veuf(ve)</RadioButton>
+
+            <Label  GridPane.rowIndex="12" GridPane.columnIndex="0" > Province</Label>
+            <ChoiceBox  GridPane.rowIndex="12" GridPane.columnIndex="1" value="Choisissez une province" fx:id="choix"> <items> <FXCollections fx:factory="observableArrayList">
+                <String fx:value="L'Alberta"/>
+                <String fx:value="La Colombie-Britannique"/>
+                <String fx:value="L'Île-du-Prince-Édouard"/>
+                <String fx:value="Le Manitoba"/>
+                <String fx:value="Le Nouveau-Brunswick"/>
+                <String fx:value="La Nouvelle-Ecosse"/>
+                <String fx:value="L'Ontario"/>
+                <String fx:value="Le Quebec"/>
+                <String fx:value="Le Saskatchewan"/>
+                <String fx:value="Terre-Neuve-et-Labrador"/>
+            </FXCollections> </items> </ChoiceBox>
+            <Label
+                GridPane.rowIndex="13" GridPane.columnIndex="0">Profesion :
+        </Label>
+            <TextField GridPane.rowIndex="13" GridPane.columnIndex="1" fx:id="champ_profesion"/>
+
+            <Label
+                    GridPane.rowIndex="14" GridPane.columnIndex="0">Quel assurance voulez vous :</Label>
+                <CheckBox GridPane.rowIndex="14" GridPane.columnIndex="1" fx:id="champ_assurance">Maladie</CheckBox>
+                <CheckBox GridPane.rowIndex="15" GridPane.columnIndex="1" >Vie</CheckBox>
+                <CheckBox GridPane.rowIndex="16" GridPane.columnIndex="1">Maison</CheckBox>
+                <CheckBox GridPane.rowIndex="17" GridPane.columnIndex="1">Voiture</CheckBox>
+
+        </GridPane>
+        <Text fx:id="messageErreur" fill="red"> </Text>
+        <Text fx:id="messageSucces" fill="#038004"> </Text>
+        <AnchorPane>
+            <Button AnchorPane.leftAnchor="60" style="-fx-background-color: rgba(0,0,255,0.69);
+                    -fx-text-fill: white" onAction="#Reinitialiser" >
+                Reinitialiser </Button>
+
+            <HBox AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="10"
+                  spacing="10">
+
+                <Button styleClass="form_action" onAction="#Terminer">Retour</Button>
+
+                <Button styleClass="form_action" onAction="#validation">Valider</Button>
+            </HBox>
+        </AnchorPane>
+    </VBox>
+    </center>
+
+
+</BorderPane>
+
+

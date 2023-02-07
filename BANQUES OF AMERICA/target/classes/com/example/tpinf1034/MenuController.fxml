@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+
+<!--
+        * KWEPET PANY MATHIEU FLORENT
+        * MARIAMA DIALLO
+        * FATIMATA DIALLO
+        * NONONSI CHARLES
+
+        */
+        -->
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.tpinf1034.menuController"
+      stylesheets="@banque.css"
+      alignment="CENTER" spacing="10" fx:id="menu">
+
+    <BorderPane>
+        <top>
+            <AnchorPane fx:id="en_tete">
+                <StackPane AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10">  <!-- Empilement image et texte -->
+                    <AnchorPane>
+                        <ImageView AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" fitWidth="100" fitHeight="100">
+                            <image>
+                                <Image url="@images/t‚l‚chargement.png"/>
+                            </image>
+                        </ImageView>
+                    </AnchorPane>
+                </StackPane>
+                <Text fx:id="titre_fenetre" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="300">BANQUE ROYALE AMÉRICAINE
+                </Text>
+            </AnchorPane>
+        </top>
+
+    </BorderPane>
+
+    <Label textAlignment="CENTER"
+           GridPane.rowIndex="1" GridPane.columnIndex="0">VEILLEZ CHOISIR L'UNE DES OPTIONS SUIVANTES :
+    </Label>
+
+    <HBox alignment="CENTER">
+        <GridPane hgap="20" vgap="20">
+
+            <VBox alignment="TOP_CENTER">
+                <Button fx:id="bout3" onAction="#afficher"
+                        userData="CREATION" minWidth="200">
+               Creation Compte
+                </Button>
+            </VBox>
+        </GridPane>
+    </HBox>
+
+    <HBox alignment="CENTER" stylesheets="@banque.css">
+        <GridPane hgap="20" vgap="20">
+
+            <VBox alignment="TOP_CENTER">
+                <Button fx:id="bouton_exerice1" onAction="#afficher"
+                        userData="GESTION" minWidth="200">
+            Informations Compte
+                </Button>
+            </VBox>
+        </GridPane>
+    </HBox>
+
+
+    <HBox alignment="CENTER">
+        <GridPane hgap="20" vgap="20">
+
+            <VBox alignment="TOP_CENTER">
+                <Button fx:id="bouton_exerice" onAction="#afficher"
+                        userData="CONVERSION" minWidth="200">
+                   Conversion
+                </Button>
+            </VBox>
+        </GridPane>
+    </HBox>
+
+    <HBox alignment="CENTER">
+        <GridPane hgap="20" vgap="20">
+
+            <VBox alignment="TOP_CENTER">
+                <Button fx:id="bout" onAction="#afficher"
+                        userData="FORMULAIRE" minWidth="200">
+                    Formulaire
+                </Button>
+            </VBox>
+        </GridPane>
+    </HBox>
+
+
+
+
+
+</VBox>
